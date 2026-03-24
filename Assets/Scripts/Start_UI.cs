@@ -19,8 +19,10 @@ public class StartUI : MonoBehaviour
     {
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
+        AllManager.Instance.SaveLeaderboard();
 #else
         Application.Quit();
+        AllManager.Instance.SaveLeaderboard();
 #endif
     }
 }

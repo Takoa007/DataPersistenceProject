@@ -119,6 +119,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &246292278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246292279}
+  - component: {fileID: 246292280}
+  m_Layer: 5
+  m_Name: LeaderBoardLayout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &246292279
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246292278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1219991596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -128, y: 284}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &246292280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246292278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: -290
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &277314704
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 176.3}
-  m_SizeDelta: {x: 550, y: 50}
+  m_AnchoredPosition: {x: 0, y: 255}
+  m_SizeDelta: {x: 687.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277314706
 MonoBehaviour:
@@ -594,7 +656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015258789, y: -46.7}
+  m_AnchoredPosition: {x: -189, y: 20.500011}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187016102
@@ -749,6 +811,7 @@ GameObject:
   - component: {fileID: 1219991594}
   - component: {fileID: 1219991593}
   - component: {fileID: 1219991597}
+  - component: {fileID: 1219991598}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -836,6 +899,7 @@ RectTransform:
   - {fileID: 1305095000}
   - {fileID: 1666756095}
   - {fileID: 1398918705}
+  - {fileID: 246292279}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -855,6 +919,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412f2f9a4786d104e9f0372f8322721d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartUI
+--- !u!114 &1219991598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219991592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23be1ff7e8386604ebb9d79c28d17e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartMan
+  nameInput: {fileID: 1187016102}
+  rowPrefab: {fileID: 8148963201992977330, guid: a3ad46f0b36ff4845b001ade2297e8aa, type: 3}
+  container: {fileID: 246292279}
 --- !u!1 &1305094999
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 16.8}
+  m_AnchoredPosition: {x: -189, y: 84}
   m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305095001
@@ -1030,7 +1109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -175.3}
+  m_AnchoredPosition: {x: -189, y: -108.09999}
   m_SizeDelta: {x: 299.8, y: 49.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398918706
@@ -1273,8 +1352,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1503084235}
+  - component: {fileID: 1503084236}
   m_Layer: 0
-  m_Name: StartMan
+  m_Name: AllManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,6 +1375,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503084236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503084234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ddaf061f698dc4b89f6fbcb8c2e3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AllManager
+  currentPlayerName: 
+  currentScore: 0
+  leaderboard: []
 --- !u!1 &1666756094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -111.6}
+  m_AnchoredPosition: {x: -189, y: -44.399986}
   m_SizeDelta: {x: 299.8, y: 49.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666756096
@@ -1380,6 +1475,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1219991597}
         m_TargetAssemblyTypeName: StartUI, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1219991598}
+        m_TargetAssemblyTypeName: StartMan, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:

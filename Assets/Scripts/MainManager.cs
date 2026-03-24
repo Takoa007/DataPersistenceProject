@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainManager : MonoBehaviour
 {
@@ -13,16 +14,29 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public GameObject GameOverText;
-    
+
+    [Header("Score + Name")]
+    public TMP_Text displayName;
+    public TMP_Text scoreText;
+
     private bool m_Started = false;
     private int m_Points;
     
     private bool m_GameOver = false;
 
     
+
+    
     // Start is called before the first frame update
     void Start()
     {
+
+        // Display the name we brought from the last scene
+        displayName.text = "Player: " + AllManager.Instance.currentPlayerName;
+
+        // Display the best score ever achieved
+        //scoreText.text = "Best: " + AllManager.Instance.bestScore;//
+
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -39,17 +53,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
+   
 
     private void Update()
     {
@@ -72,6 +76,11 @@ public class MainManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape)) 
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
@@ -83,6 +92,13 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        // 1. Send the final points to the persistent manager
+        //AllManager.Instance.SaveNewHighScore(m_Points);//
+
+        // 2. (Optional) Show the Game Over UI or Restart the Scene
+
+        AllManager.Instance.AddScoreToBoard(AllManager.Instance.currentPlayerName, m_Points);
+        Debug.Log("Game Over! Score sent to MainMan: " + m_Points);
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
